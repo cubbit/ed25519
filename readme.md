@@ -1,6 +1,13 @@
 Ed25519
 =======
 
+Notes
+-----
+
+A Cmake compatible version of [orlp/ed25519] portable C implementation of Ed25519 curves.
+
+---
+
 This is a portable implementation of [Ed25519](http://ed25519.cr.yp.to/) based
 on the SUPERCOP "ref10" implementation. Additionally there is key exchanging
 and scalar addition included to further aid building a PKI using Ed25519. All
@@ -12,7 +19,6 @@ Windows, `/dev/urandom` on nix). If you wish to be entirely portable define
 `ED25519_NO_SEED`. This disables the `ed25519_create_seed` function, so if your
 application requires key generation you must supply your own seeding function
 (which is simply a 256 bit (32 byte) cryptographic random number generator).
-
 
 Performance
 -----------
@@ -30,7 +36,6 @@ speeds (running on only one a single core):
 The speeds on other machines may vary. Sign/verify times will be higher with
 longer messages. The implementation significantly benefits from 64 bit
 architectures, if possible compile as 64 bit.
-
 
 Usage
 -----
@@ -80,7 +85,7 @@ void ed25519_sign(unsigned char *signature,
 
 Creates a signature of the given message with the given key pair. `signature`
 must be a writable 64 byte buffer. `message` must have at least `message_len`
-bytes to be read. 
+bytes to be read.ååå
 
 ```c
 int ed25519_verify(const unsigned char *signature,
@@ -104,7 +109,6 @@ passing in `NULL` for the key you don't know. This is useful for enforcing
 randomness on a key pair by a third party while only knowing the public key,
 among other things.  Warning: the last bit of the scalar is ignored - if
 comparing scalars make sure to clear it with `scalar[31] &= 127`.
-
 
 ```c
 void ed25519_key_exchange(unsigned char *shared_secret,
@@ -163,4 +167,5 @@ ed25519_key_exchange(shared_secret, other_public_key, private_key);
 
 License
 -------
+
 All code is released under the zlib license. See license.txt for details.
