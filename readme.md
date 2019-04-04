@@ -20,6 +20,7 @@ Windows, `/dev/urandom` on nix). If you wish to be entirely portable define
 application requires key generation you must supply your own seeding function
 (which is simply a 256 bit (32 byte) cryptographic random number generator).
 
+
 Performance
 -----------
 
@@ -56,6 +57,28 @@ unsigned char public_key[32];
 unsigned char private_key[64];
 unsigned char scalar[32];
 unsigned char shared_secret[32];
+```
+
+Building with CMake
+----------
+
+To build the library run the following:
+
+```bash
+    mkdir build
+    cd build
+    cmake ..
+    make
+```
+
+Installing with CMake
+----------
+
+To install the library run the following after the build phase:
+
+```bash
+    make
+    make install
 ```
 
 API
