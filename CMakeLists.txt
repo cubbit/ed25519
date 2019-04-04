@@ -19,6 +19,7 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+
 # Target
 add_library(ed25519 STATIC 
     src/add_scalar.c
@@ -32,6 +33,7 @@ add_library(ed25519 STATIC
     src/verify.c
 )
 
+set(HEADERS include/ed25519.h include/fe.h include/fixedint.h include/ge.h include/precomp_data.h include/sc.h include/sha512.h)
 set_target_properties(ed25519 PROPERTIES VERSION ${VERSION})
 set_target_properties(ed25519 PROPERTIES SOVERSION 1)
 
@@ -45,3 +47,5 @@ install(TARGETS ed25519
     ARCHIVE DESTINATION  ${CMAKE_INSTALL_LIBDIR}
     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
+    
+install(FILES ${HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
