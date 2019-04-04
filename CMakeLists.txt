@@ -1,5 +1,6 @@
 # Requirements
 cmake_minimum_required(VERSION 3.0.0)
+include(GNUInstallDirs)
 
 # Project settings
 set(VERSION 1.0.0) 
@@ -39,6 +40,8 @@ include_directories(ed25519 PUBLIC include)
 
 # Install
 install(TARGETS ed25519
-    LIBRARY DESTINATION lib/${PROJECT_NAME}
-    PUBLIC_HEADER DESTINATION include/${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}-targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION  ${CMAKE_INSTALL_LIBDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
