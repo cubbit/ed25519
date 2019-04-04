@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "sha512.h": "c",
-        "ed25519.h": "c",
-        "ge.h": "c",
-        "sc.h": "c"
-    }
-}
