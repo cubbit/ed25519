@@ -65,10 +65,10 @@ Building with CMake
 To build the library run the following:
 
 ```bash
-    mkdir build
-    cd build
-    cmake ..
-    make
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 Installing with CMake
@@ -77,8 +77,8 @@ Installing with CMake
 To install the library run the following after the build phase:
 
 ```bash
-    make
-    make install
+make
+make install
 ```
 
 API
