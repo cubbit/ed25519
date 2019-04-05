@@ -5,7 +5,7 @@ include(GNUInstallDirs)
 # Project settings
 set(VERSION 1.0.0) 
 set(DESCRIPTION "Ed25519 C implementation")
-project(ed25519 VERSION ${VERSION} DESCRIPTION ${DESCRIPTION} LANGUAGES C)
+project(ed25519)
 
 # Build settings
 set(CMAKE_CXX_STANDARD 11)
