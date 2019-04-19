@@ -31,6 +31,7 @@ add_library(ed25519 STATIC
     src/seed.c
     src/sign.c
     src/verify.c
+    src/sha256.c
 )
 
 set(HEADERS include/ed25519.h include/fe.h include/fixedint.h include/ge.h include/precomp_data.h include/sc.h include/sha512.h)
