@@ -25,5 +25,8 @@ install(TARGETS ed25519
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
-install(DIRECTORY include DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+set(HEADERS include/ed25519.h include/fe.h include/fixedint.h include/ge.h include/precomp_data.h include/sc.h include/sha512.h)
+install(FILES ${HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
 install(EXPORT ${PROJECT_NAME}-targets DESTINATION cmake)
